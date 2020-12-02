@@ -14,6 +14,8 @@ void main(){
     print("Please select the weapon of you choice: papel, gunting, or bato");
     userChoice = stdin.readLineSync();
 
+    userChoice = userChoice?.toLowerCase();
+
     if((userChoice.compareTo(compChoices[0]) == 0) || (userChoice.compareTo(compChoices[1]) == 0) || (userChoice.compareTo(compChoices[2]) == 0))
     {
       print("Good choice.");
