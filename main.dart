@@ -52,7 +52,7 @@ void main(){
     {
       compGuess = random.nextInt(2);
 
-      print('$compGuess');
+      compareChoices(userChoice, compChoices[compGuess]);
       validSelection = true;
     }
 
@@ -66,6 +66,31 @@ void main(){
   
 }
 
-void compareChoices(){
-
+void compareChoices(String userChoice, String compChoice){
+  
+  print("Your choice is $userChoice and my choice is $compChoice");
+  
+  if(userChoice  == compChoice)
+  {
+    print("It's a tie!");
+  }
+  else if(userChoice == "papel" && compChoice == "bato")
+  {
+    print("You win!");
+    userScore++;
+  }
+  else if(userChoice == "bato" && compChoice == "gunting")
+  {
+    print("You win!");
+    userScore++;
+  }
+  else if(userChoice == "gunting" && compChoice == "papel")
+  {
+    print("You win!");
+    userScore++;
+  }
+  else{
+    print("I win!");
+    compScore++;
+  }
 }
