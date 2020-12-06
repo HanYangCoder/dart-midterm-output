@@ -25,7 +25,7 @@ void main(){
       scoreLimit = stdin.readLineSync();
       scoreLimit = int.parse(scoreLimit);
 
-      print("$scoreLimit");
+      print("Let's race to $scoreLimit");
 
 
       for(int i=0; i<scoreLimitChoices.length; i++)
@@ -100,7 +100,10 @@ void main(){
 
 void compareChoices(String userChoice, String compChoice){
   
-  print("Your choice is $userChoice and my choice is $compChoice");
+  String userChoiceEmoji = getEmoji(userChoice);
+  String compChoiceEmoji = getEmoji(compChoice);
+
+  print("Your choice is $userChoiceEmoji and my choice is $compChoiceEmoji");
   
   if(userChoice == compChoice)
   {
@@ -127,4 +130,17 @@ void compareChoices(String userChoice, String compChoice){
   }
 
   print("You: $userScore \nComputer: $compScore");
+}
+
+String getEmoji(String choice){
+
+  if (choice == "papel") {
+    return "\u{1F4C3}";
+  }
+  else if(choice == "gunting"){
+    return "\u{2702}";
+  }
+  else {  // bato
+    return "\u{270A}";
+  }
 }
