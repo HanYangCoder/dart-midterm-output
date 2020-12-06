@@ -14,6 +14,7 @@ void main(){
   var validSelection = false;
   int compGuess;
   bool limitPass = false;
+  bool reachedScoreLimit = false;
 
   print("Hello there! Welcome to the popular game \"Papel, Gunting, Bato!\"");
 
@@ -41,7 +42,8 @@ void main(){
 
   }while(!limitPass);
     
-  do{
+  while(!reachedScoreLimit){
+    do{
     
     print("Please select the weapon of you choice: papel, gunting, or bato");
     userChoice = stdin.readLineSync();
@@ -61,16 +63,34 @@ void main(){
       validSelection = false;
     }
 
-  }while(validSelection == false);
-  
-  
+    }while(validSelection == false);
+
+    if(userScore == scoreLimit)
+    {
+      reachedScoreLimit = true;
+    }
+    else if(compScore == scoreLimit)
+    {
+      reachedScoreLimit = true;
+    }
+  }
+
+  if(userScore > compScore)
+  {
+    print("You win the game! Good game, well played.");
+  }
+
+  else{
+    print("I win the game! I'm better than you!");
+  }
+
 }
 
 void compareChoices(String userChoice, String compChoice){
   
   print("Your choice is $userChoice and my choice is $compChoice");
   
-  if(userChoice  == compChoice)
+  if(userChoice == compChoice)
   {
     print("It's a tie!");
   }
@@ -93,4 +113,6 @@ void compareChoices(String userChoice, String compChoice){
     print("I win!");
     compScore++;
   }
+
+  print("You: $userScore \nComputer: $compScore");
 }

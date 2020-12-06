@@ -2,6 +2,7 @@ import 'dart:io';
 
 void main(){
 
+/*
   String str1 = "Aba";
   String str2 = "aba";
   String str3 = "1Ka";
@@ -23,4 +24,16 @@ void main(){
 
   print(str3.toLowerCase());
   */
+*/
+
+  int i=5;
+  int j=10;
+
+  do{
+
+    print("$i, $j");
+
+    i++;
+    j++;
+  }while((j < 20) || (i  < 10));
 }
